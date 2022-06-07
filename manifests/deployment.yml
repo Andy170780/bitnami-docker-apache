@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "abakskubenet-70e1"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "abakskubenet-70e1"
+  template:
+    metadata:
+      labels:
+        app: "abakskubenet-70e1"
+    spec:
+      containers:
+        - name: "abakskubenet-70e1"
+          image: "abakskubenet.azurecr.io/abakskubenet"
+          ports:
+          - containerPort: 8080
